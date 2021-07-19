@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #terjawab, #benar, #akurasi, #waktu{
+            border-style: none;
+        }
+        #soals{
+            margin-left: 20px;
+            line-height: 1.25em;
+            width:50%;
+            border: 1px solid grey;
+            padding: 10px;
+        }
+        @media screen and (max-width: 1000px){
+            #soals{
+                width:80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="" style="display: flex; flex-direction: column;">
+        <div>
+            
+            <label for="input">kata yang diketik</label>
+            <input type="text" name="input" id="userInput" autocomplete="off" autofocus>
+        </div>
+        <div>
+            <label for="soal">kata yang harus diketik</label>
+            <input type="text" name="soal" disabled id="soal" style="color: aqua;">
+        </div>
+        <div id="soals">
+            
+        </div>
+        <div>
+            <label for="akurasi">akurasi</label>
+            <input type="text" name="akurasi" id="akurasi" disabled>
+        </div>
+        <div>
+            <label for="terjawab">terjawab</label>
+            <input type="text" name="terjawab" id="terjawab" disabled>
+            <label for="akurasi">benar</label>
+            <input type="text" name="benar" id="benar" disabled>
+        </div>
+        <div>
+            <h2 id="waktu">1:00</h2>
+        </div>
+        
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
