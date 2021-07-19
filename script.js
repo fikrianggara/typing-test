@@ -6,11 +6,7 @@ function check(kata){
     return(soal.includes(kata) ? true : false);
 }
 
-function createSoal(){
-    let str = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, dicta. Voluptate reiciendis cum dicta quod, nam quam doloribus quaerat amet deserunt ullam molestias modi est neque atque quasi eligendi error";
-    str = str.split(" ");
-    return str;
-}
+
 
 function randomizeSoal(str){
     const panjang = str.length;
@@ -26,6 +22,13 @@ let rasio = 0;
 let wpm = 0;
 let detik = 0;
 let count = 0;
+let str= "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, dicta. Voluptate reiciendis cum dicta quod, nam quam doloribus quaerat amet deserunt ullam molestias modi est neque atque quasi eligendi error";
+
+function createSoal(str){
+    str = cleanText(str);
+    str = str.split(" ");
+    return str;
+}
 function validasi(input){
     if(input==" "){
         return
@@ -53,11 +56,14 @@ function akurasi(answered, right){
 }
 function cleanText(text){
     if(text.includes(",") || text.includes(".") || text.includes("?") || text.includes("!")){
-        
+        text = text.replace(/[,.?!]/g,"");
+        return text;
+    } else {
+        return text;
     }
 }
 window.addEventListener("load",()=>{
-    soals = createSoal();
+    soals = createSoal(str);
     let textSoal = getById("soals");
     for(let i=0;i<100;i++){
         let temp = soals[randomizeSoal(soals)];
