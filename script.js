@@ -18,6 +18,7 @@ let soals = null;
 let soalrandom = [];
 let terjawab = 0;
 let benar = 0;
+let salah = 0;
 let rasio = 0;
 let wpm = 0;
 let detik = 0;
@@ -31,6 +32,11 @@ function createSoal(str){
 }
 function validasi(input){
     input = input.toLowerCase();
+    if(salah>=20){
+       wpm = terjawab;
+       window.alert("Kecepatan ketik : "+wpm+" WPM. Akurasi akhir yaitu "+akurasi(terjawab,benar)+"%");
+       window.location.reload();
+    }
     if(input==" "){
         return
     } else {
