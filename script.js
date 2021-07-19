@@ -98,7 +98,7 @@ userInput.addEventListener("input", ()=>{
     }
     let sama = false;
     let soal = getById("soal");
-    let input = userInput.value;
+    let input = userInput.value.toLowerCase();
     sama = check(input);
     if(sama){
         soal.style.color="green";
